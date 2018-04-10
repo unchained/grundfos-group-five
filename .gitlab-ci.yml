@@ -1,0 +1,42 @@
+stages:
+  - build
+  - deploy
+
+cache:
+  key: "$CI_BUILD_REF_NAME"
+  untracked: true
+  paths:
+    - node_modules/
+    - dist/
+
+build:
+  stage: build
+  image: node:carbon
+  before_script:
+    - npm install
+  script:
+    - npm run build
+  tags:
+    - docker
+  artifacts:
+    expire_in: 14d
+    paths:
+      - dist/
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying to pages environment..."
+    - rm -rf public
+    - mkdir public
+    - cp -r dist/. public
+  environment:
+    name: pages
+    url: http://grundfos-prototype.gitlab.io/
+  artifacts:
+    expire_in: 14d
+    paths:
+      - public/
+  only:
+    - tags
+  when: manual
