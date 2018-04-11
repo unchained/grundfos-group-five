@@ -69,8 +69,8 @@ $global-font-size: 100%;
 $global-width: rem-calc(1198);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #0068b4,
-  secondary: #727272,
+  primary: #6eb556,
+  secondary: #0068b4,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -293,7 +293,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
+$button-padding: rem-calc(9 12);
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -305,7 +305,7 @@ $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
+  default: rem-calc(13),
   large: 1.25rem,
 );
 $button-palette: $foundation-palette;
@@ -444,7 +444,7 @@ $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(16);
+$input-font-size: rem-calc(14);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
 $input-background: $gray-1;
@@ -452,7 +452,7 @@ $input-background-focus: $gray-1;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $gray-4;
 $input-border-focus: 1px solid $dark-gray;
-$input-padding: $form-spacing / 2;
+$input-padding: rem-calc(6 12);
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-cursor-disabled: not-allowed;
@@ -807,10 +807,10 @@ $table-stack-breakpoint: medium;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
-$tab-color: $primary-color;
-$tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
+$tab-background: $light-gray;
+$tab-color: $dark-gray;
+$tab-background-active: $white;
+$tab-active-color: $black;
 $tab-item-font-size: rem-calc(12);
 $tab-item-background-hover: $white;
 $tab-item-padding: 1.25rem 1.5rem;

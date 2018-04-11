@@ -1,0 +1,136 @@
+.introjs-tooltip {
+  background-color: $white;
+  color: $body-font-color;
+  padding: 20px;
+  border-radius: 0;
+  min-width: 400px;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.introjs-button {
+  @mixin introjs-button {
+    background-image: none;
+    background-color: get-color('secondary');
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    border-shadow: none;
+    text-shadow: none;
+    padding: $button-padding;
+    border-radius: $button-radius;
+    margin-top: 20px;
+  }
+
+  @include introjs-button;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include introjs-button;
+  }
+}
+
+.introjs-skipbutton {
+  background-color: transparent;
+  color: $body-font-color;
+  float: left;
+
+  &:hover {
+    background-color: transparent;
+    color: $body-font-color;
+  }
+}
+
+.introjs-nextbutton,
+.introjs-donebutton {
+  background-color: get-color('primary');
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(get-color('primary'), 10);
+    color: #fff;
+  }
+}
+
+.introjs-helperNumberLayer {
+  position: absolute;
+  z-index: 9999999999 !important;
+  padding: 10px;
+  font-family: Arial, verdana, tahoma;
+  font-size: 13px;
+  top: -40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background: $corporate-blue;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.introjs-disabled {
+  @mixin introjs-disabled-button {
+    outline: none;
+    background-image: none;
+    background-color: transparent;
+    color: transparentize($body-font-color, 0.6);
+    border: 1px solid transparent;
+    box-shadow: none;
+    border-shadow: none;
+    text-shadow: none;
+  }
+
+  @include introjs-disabled-button;
+
+  &:focus,
+  &:hover {
+    @include introjs-disabled-button;
+  }
+}
+
+.introjs-arrow {
+  $arrow-color: #fff;
+
+  border: 10px solid #fff;
+
+  &.top,
+  &.top-middle,
+  &.top-right {
+    border-color: transparent transparent $arrow-color;
+    top: -20px;
+    left: 20px;
+  }
+
+  &.bottom,
+  &.bottom-middle,
+  &.bottom-right {
+    border-color: $arrow-color transparent transparent;
+    bottom: -20px;
+    left: 20px;
+  }
+
+  &.left,
+  &.right {
+    top: 20px;
+  }
+
+  &.left-bottom,
+  &.right-bottom {
+    bottom: 20px;
+  }
+
+  &.left,
+  &.left-bottom {
+    left: -20px;
+    border-color: $arrow-color transparent transparent transparent;
+  }
+
+  &.right,
+  &.right-bottom {
+    right: -20px;
+    border-color: transparent transparent transparent $arrow-color;
+  }
+}

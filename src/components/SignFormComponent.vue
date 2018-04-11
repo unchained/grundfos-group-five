@@ -42,9 +42,13 @@
                 </label>
               </div>
               <fieldset class="column">
-                <router-link @click.native="$root.login" to="register" class="button expanded">Register</router-link>
-                <small class="margin-bottom-1 display-inline-block">By registering you agree to our
+                <router-link @click.native="$root.login" to="register" class="button">Register</router-link>
+                <small class="display-block">
+                  By registering you agree to our
                   <a href="#">terms of service</a>.
+                </small>
+                <small class="margin-bottom-1">
+                  <a data-toggle="tab" data-tabs-content="signform-tabs" data-tabs-value="sign-in-panel"><b>Already have a Grundfos account?</b></a>
                 </small>
               </fieldset>
             </form>
@@ -64,9 +68,9 @@
                 </label>
               </div>
               <fieldset class="column">
-                <router-link @click.native="$root.login" to="dashboard" class="button expanded">Log in</router-link>
-                <small class="margin-bottom-1 display-inline-block">
-                  <a href="#">Forgot your password?</a>
+                <router-link @click.native="$root.login" to="dashboard" class="button">Log in</router-link>
+                <small class="margin-bottom-1 display-block">
+                  <a href="#" class="secondary"><b>Forgot your password?</b></a>
                 </small>
               </fieldset>
             </form>
@@ -100,14 +104,6 @@
   export default {
     name: 'sign-form-component',
     data: () => ({}),
-    methods: {
-      registerFormSubmitted: () => {
-
-      },
-      loginFormSubmitted: () => {
-        this.$root.$emit('login');
-      },
-    },
     mounted() {
       initFormTabTogglers();
       initSignForm();
@@ -128,20 +124,38 @@
     max-width: 400px;
 
     .tabs {
-      display: flex;
       border-bottom: none;
+      display: flex;
 
       .tabs-title {
-        flex: 1 0 auto;
-        text-align: center;
-        background-color: $tab-background-active;
         border-bottom: $tab-content-border;
+        flex: 1 0 auto;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
 
         & > a:focus, & > a[aria-selected='true'] {
-          background-color: $tab-background;
           border-bottom: none;
         }
       }
     }
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    animation-name: pulse;
   }
 </style>

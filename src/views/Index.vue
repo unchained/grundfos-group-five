@@ -1,11 +1,11 @@
 <template>
   <div>
     <navbar-partial></navbar-partial>
-    <section class="login-section">
+    <section class="login-section" id="loginSection">
       <div class="grid-container padding-top-1 padding-bottom-2">
         <div class="grid-x grid-margin-x align-top padding-top-2">
           <div class="cell small-7 padding-right-3">
-            <h1 class="h2 margin-bottom-2">Learn all about Grundfos products and plumbing. From the industry leaders. For free.</h1>
+            <h1 class="margin-bottom-2">Learn all about Grundfos products and plumbing. From the industry leaders. For free.</h1>
             <p>
               Grundfos Ecademy is a platform for sellers, installers and home owners to provide them with information about different pumps, plumbing basics and theory as well as industry trends.
             </p>
@@ -18,9 +18,9 @@
       </div>
     </section>
 
-    <section class="grid-container padding-top-3 padding-bottom-2">
+    <section class="grid-container padding-top-3 padding-bottom-3">
       <div class="grid-x grid-margin-x">
-        <div class="cell text-center margin-bottom-3">
+        <div class="cell text-center margin-bottom-1">
           <h2>What is Ecademy?</h2>
         </div>
       </div>
@@ -32,15 +32,18 @@
         </div>
       </div>
       <div class="grid-x grid-margin-x">
-        <div class="cell text-center margin-bottom-3">
-          <a href="#" data-toggle="tab" data-tabs-content="signform-tabs" data-tabs-value="sign-in-panel" class="button padding-vertical-2 padding-horizontal-3">Start learning now!</a>
+        <div class="cell text-center margin-bottom-1">
+          <button v-scroll-to="{
+            el: '#loginSection',
+            onDone: highlightForm,
+           }" data-toggle="tab" data-tabs-content="signform-tabs" data-tabs-value="register-panel" class="button margin-bottom-0">Start learning now</button>
         </div>
       </div>
     </section>
 
-    <section class="grid-container padding-top-3 padding-bottom-3">
+    <section class="grid-container padding-top-2 padding-bottom-3">
       <div class="grid-x grid-margin-x">
-        <div class="cell text-center margin-bottom-3">
+        <div class="cell text-center margin-bottom-1">
           <h2>How can Ecademy help your business</h2>
           <p>It's easy and quick and gives you a lot of benefits to use in everyday work.</p>
         </div>
@@ -75,9 +78,9 @@
       </div>
     </section>
 
-    <section class="grid-container padding-top-3 padding-bottom-3">
+    <section class="grid-container padding-top-2 padding-bottom-3">
       <div class="grid-x grid-margin-x">
-        <div class="cell text-center margin-bottom-3">
+        <div class="cell text-center margin-bottom-1">
           <h2>How has Ecademy helped others like you?</h2>
         </div>
       </div>
@@ -89,6 +92,14 @@
         <testimonial-component name="Tamir" surname="Pumper" profession="Plumber, India" avatar="https://randomuser.me/api/portraits/men/39.jpg" message="“After earning a certificate of training on solving environmental issues related to plumbing at Grundfos Ecademy. I was able to get a higher paid job in the most progressive plumbing company in India.”"></testimonial-component>
       </div>
     </section>
+    <div class="grid-x grid-margin-x">
+      <div class="cell text-center margin-bottom-3">
+        <button v-scroll-to="{
+            el: '#loginSection',
+            onDone: highlightForm,
+           }" data-toggle="tab" data-tabs-content="signform-tabs" data-tabs-value="register-panel" class="button">Start learning now</button>
+      </div>
+    </div>
     <footer-partial></footer-partial>
   </div>
 </template>
@@ -110,6 +121,11 @@
     data: () => ({
       msg: 'Welcome to Your Vue.js App',
     }),
+    methods: {
+      highlightForm: () => {
+        $('.form-container').addClass('pulse animated');
+      },
+    },
   };
 </script>
 

@@ -6,8 +6,10 @@ import Foundation from 'foundation-sites';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import VueScrollTo from 'vue-scrollto';
 
 Vue.config.productionTip = false;
+Vue.use(VueScrollTo);
 
 class Client {
   constructor() {

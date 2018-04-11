@@ -1,4 +1,20 @@
 .card {
+  border: 1px solid $gray-4;
+
+  .card-divider {
+    background-color: $gray-3;
+    color: $black;
+  }
+
+  &--stripe-top {
+    &::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background-color: $blue-3;
+    }
+  }
+
   &.course-card {
     position: relative;
 
@@ -19,8 +35,10 @@
         transform: scale(1);
         display: inline-block;
       }
+
       &:hover {
         cursor: pointer;
+
         i {
           transform: scale(1.2);
         }

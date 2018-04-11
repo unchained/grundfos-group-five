@@ -1,3 +1,8 @@
+body,
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-size: rem-calc(13);
   -webkit-font-smoothing: antialiased;
@@ -5,8 +10,32 @@ body {
 }
 
 a {
+  color: $secondary-color;
+
+  &:hover {
+    color: $blue-2;
+  }
+
   &[disabled] {
     pointer-events: none;
   }
 }
 
+.button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+}

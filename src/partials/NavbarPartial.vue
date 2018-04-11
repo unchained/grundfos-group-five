@@ -34,7 +34,7 @@
                 <li v-else>
                   <a data-toggle="tab" data-tabs-content="signform-tabs"
                     data-tabs-value="sign-in-panel" id="start-learning-button">
-                    Sign in <i class="icon icon-gr-user"></i>
+                    Log in <i class="icon icon-gr-user"></i>
                   </a>
                 </li>
               </ul>
@@ -43,8 +43,8 @@
           <div class="cell">
             <nav class="top-bar">
               <div class="top-bar-title">
-                <router-link to="dashboard" class="topbar-logo">
-                  <img src="/static/img/grundfos-logo.svg">
+                <router-link to="/" class="topbar-logo">
+                  <img src="/static/img/grundfos-logo.svg" alt="Grundfos logo">
                 </router-link>
               </div>
               <div class="top-bar-right">

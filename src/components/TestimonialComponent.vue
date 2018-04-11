@@ -1,9 +1,9 @@
 <template>
-  <div class="cell auto card">
+  <div class="cell auto card card--stripe-top">
     <div class="card-divider">
       <div class="media-object">
         <div class="media-object-section">
-          <img :src="avatar" class="radius" width="50">
+          <img :src="avatar" :alt="name + ' ' + surname" class="radius" width="50">
         </div>
         <div class="media-object-section">
           <p class="h6 margin-bottom-0 font-bold">{{ name }} {{ surname }}</p>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="card-section">
-      <blockquote class="margin-bottom-2">
+      <blockquote class="margin-bottom-1">
         {{ message }}
       </blockquote>
       <!--<div class="text-right">-->
@@ -31,23 +31,4 @@
 </script>
 
 <style lang="scss" scoped>
-  .testimonial {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url('https://previews.123rf.com/images/kadmy/kadmy1611/kadmy161100016/65192941-plumber-work-construction-worker-installing-water-high-pressure-pump-meter-in-boiler-room.jpg');
-    background-position: 40% 0%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-    blockquote {
-      color: #fff;
-      position: absolute;
-      bottom: 5%;
-      left: 5%;
-      width: 80%;
-
-      p {
-        color: inherit;
-      }
-    }
-  }
 </style>

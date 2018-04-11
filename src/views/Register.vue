@@ -3,15 +3,6 @@
     <div class="grid-x">
       <div class="cell small-12 medium-6 flex-container align-center-middle">
         <div class="width-75">
-          <!--<ul class="steps margin-bottom-3">-->
-            <!--<li>-->
-              <!--<strong class="transparent">Step 1/2</strong>-->
-            <!--</li>-->
-            <!--<li class="active text-right">-->
-              <!--<strong>Step 2/2</strong>-->
-            <!--</li>-->
-          <!--</ul>-->
-
           <h1>What's your role?</h1>
           <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="100 percent" aria-valuemax="100">
             <span class="progress-meter" style="width: 100%">
@@ -26,10 +17,10 @@
                 <label for="reseller">
                   <div class="card">
                     <div class="card-section padding-bottom-0">
-                      <h2 class="text-center"><i class="ion-loop"></i></h2>
+                      <div class="text-center h2"><i class="icon-gr-country-globe"></i></div>
                     </div>
                     <div class="card-section flex-container align-center-middle">
-                      <h5 class="text-center">Reseller</h5>
+                      <p class="text-center">Reseller</p>
                     </div>
                   </div>
                 </label>
@@ -37,10 +28,10 @@
                 <label for="installer">
                   <div class="card">
                     <div class="card-section padding-bottom-0">
-                      <h2 class="text-center"><i class="ion-wrench"></i></h2>
+                      <div class="text-center h2"><i class="icon-gr-settings"></i></div>
                     </div>
                     <div class="card-section flex-container align-center-middle">
-                      <h5 class="text-center">Installer</h5>
+                      <p class="text-center">Installer</p>
                     </div>
                   </div>
                 </label>
@@ -48,10 +39,10 @@
                 <label for="consulting">
                   <div class="card">
                     <div class="card-section padding-bottom-0">
-                      <h2 class="text-center"><i class="ion-clipboard"></i></h2>
+                      <div class="text-center h2"><i class="icon-gr-learning-training"></i></div>
                     </div>
                     <div class="card-section flex-container align-center-middle">
-                      <h5 class="text-center">Consulting Engineer</h5>
+                      <p class="text-center">Consultant</p>
                     </div>
                   </div>
                 </label>
@@ -59,10 +50,10 @@
                 <label for="other">
                   <div class="card">
                     <div class="card-section padding-bottom-0">
-                      <h2 class="text-center"><i class="icon-gr-help"></i></h2>
+                      <div class="text-center h2"><i class="icon-gr-help"></i></div>
                     </div>
                     <div class="card-section flex-container align-center-middle">
-                      <h5 class="text-center">Other</h5>
+                      <p class="text-center">Other</p>
                     </div>
                   </div>
                 </label>
@@ -111,27 +102,6 @@ export default {
     height: 100vh;
   }
 
-  /*.steps {*/
-    /*display: flex;*/
-    /*flex-flow: row nowrap;*/
-    /*justify-content: space-between;*/
-    /*align-items: stretch;*/
-    /*list-style: none;*/
-    /*margin-left: 0;*/
-    /*margin-right: 0;*/
-
-    /*li {*/
-      /*flex: 1 0 auto;*/
-      /*border-bottom: 1px solid transparent;*/
-      /*border-color: #3386c3;*/
-
-      /*&.active {*/
-        /*border-width: 2px;*/
-        /*border-color: #0068b4;*/
-      /*}*/
-    /*}*/
-  /*}*/
-
   .progress {
     margin-bottom: rem-calc(80);
 
@@ -142,13 +112,20 @@ export default {
 
   .answers {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: stretch;
 
-    > * {
-      flex: 1 0 auto;
+    label {
+      display: block;
+      flex: 0 0 33%;
+      margin: rem-calc(0 0 16 0);
       max-width: 150px;
+
+      p,
+      i::before {
+        transition: color 110ms ease;
+      }
     }
 
     input[type="radio"] {
@@ -156,35 +133,39 @@ export default {
 
       &:checked + label {
         .card {
-          background-color: rgba($primary-color, 0.5);
+          background-color: $gray-5;
+
+          p,
+          i {
+            color: $white;
+          }
         }
       }
     }
 
-    label {
-      display: inline-block;
-      margin: 0;
-    }
-
     .card {
-      border-radius: 4px;
-      margin-bottom: 0;
       height: 100%;
+      margin-bottom: 0;
+      transition: background-color 110ms ease;
+
       &:hover {
-        background-color: rgba($primary-color, 0.5);
+        background-color: $gray-5;
+
+        p,
+        i {
+          color: $white;
+        }
       }
     }
   }
 
   .testimonial {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url('https://previews.123rf.com/images/kadmy/kadmy1611/kadmy161100016/65192941-plumber-work-construction-worker-installing-water-high-pressure-pump-meter-in-boiler-room.jpg');
-    background-position: 40% 0%;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url('https://previews.123rf.com/images/kadmy/kadmy1611/kadmy161100016/65192941-plumber-work-construction-worker-installing-water-high-pressure-pump-meter-in-boiler-room.jpg') no-repeat 40% 0%;
     background-size: cover;
     position: relative;
 
     blockquote {
-      color: #fff;
+      color: $white;
       position: absolute;
       bottom: 5%;
       left: 5%;
